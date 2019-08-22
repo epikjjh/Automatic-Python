@@ -15,7 +15,8 @@ with open("result.txt", "r") as f:
     answer = ""
     for elem in data.output_data:
         stream = "\n".join(elem)
-        answer += stream
+        answer += stream + "\n"
+    answer = answer.rstrip()
     if output == answer:
         print("Answer correctly")
     else:
