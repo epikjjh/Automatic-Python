@@ -158,4 +158,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# sensitive information
+info.py
+
 # End of https://www.gitignore.io/api/git,linux,python
