@@ -27,11 +27,9 @@ class Submit:
     def signin(self):
         try:
             self.driver.get('https://www.acmicpc.net/login?next=%2F')
-            elem = self.driver.find_element_by_name('login_user_id')
-            elem.send_keys(self.__boj_id)
-            elem = self.driver.find_element_by_name('login_password')
-            elem.send_keys(self.__boj_password)
-            elem.send_keys(Keys.RETURN)
+            self.driver.find_element_by_name('login_user_id').send_keys(self.__boj_id)
+            self.driver.find_element_by_name('login_password').send_keys(self.__boj_password)
+            self.driver.find_element_by_name('login_password').send_keys(Keys.RETURN)
             ret = self.driver.find_element_by_css_selector('body>div.wrapper>div.header.no-print>div.topbar>div>ul>li:nth-child(1)>a').text == self.__boj_id
         except Exception as msg:
             print(msg)
